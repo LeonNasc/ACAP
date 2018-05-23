@@ -1,159 +1,132 @@
-/* Fontes responsivas */
-
-html {
-  font-size: 1rem;
-}
-
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-	}, 
-	#logo{
-		margin-bottom:1rem;
-	}
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  },
-  	#header{
-		height:10vh;
-	}
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-	},
-	#header{
-		height:10vh;
-	}
-}
-
 /* ------------------------------------------------------ */
 
-.container-fluid{
-	padding:0;
+.container-fluid {
+	padding: 0;
 }
 
-.conteudo{
-	min-height:90vh;
-	transition-timing-function: ease-in-out;
+.conteudo {
+	height: 90vh;
 }
 
-.chevron{
-	text-decoration:none;	
-	color:white;
-	-webkit-transition: width 2s; /* Safari */
-    transition: width 2s;
+.chevron {
+	text-decoration: none;
+	color: white;
+	-webkit-transition: width 2s;
+	/* Safari */
+	transition: width 2s;
 }
 
-.chevron::hover{
-	font-size:2em;
+.chevron::hover {
+	font-size: 2em;
 }
 
-.jumbotron{
-  width:100%;
-	background-color:rgba(0,0,0,0);
-  padding:3em;
-  margin-bottom:0;
+.jumbotron {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 1.5em;
+	margin-bottom: 0;
 }
 
-.imageshow{
-	width:100%;
-	margin:0;
-  background-image:url("../img/sdu.jpg");
-  background-size:cover;
-  background-repeat:round;
+.imageshow {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	background-image: url("../img/sdu.jpg");
+	background-size: cover;
+	background-position: 50% 50%;
 }
 
-section .innerTXT{
-	background-color:rgba(0,0,0,0.3);
-	color:white;
-	padding:5%;
-	text-align:justify;
-	max-height:75%;
+section .innerTXT {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	padding: 5%;
+	text-align: justify;
+	max-height: 75%;
 }
 
-.card{
-	padding:5%;
-	border-radius:0;
-}
-/* ----------------------------------------------------------------- */
-#header{
-	background-color: rgb(210,210,210,0.92);
-	width:100.5vw;
-	padding-top:1em;
-}
-
-#header  #logo{
-  width:5rem;
-  height:5rem;
-	margin-left:1rem;
-}
-
-#logo > img{
-  width:6.5rem;
-  height:6.5rem;
+.card {
+	padding: 5%;
+	border-radius: 0;
 }
 
 /* ----------------------------------------------------------------- */
-#introd{
-	color:white;	
+
+#header {
+	background-color: rgb(210, 210, 210, 0.92);
+	width: auto;
+	padding-top: 1em;
 }
 
-#hist{
-	background-color:#009c3b;
+#header #logo {
+	width: 5rem;
+	height: 5rem;
+	margin-left: 1rem;
 }
 
-#sideimg{
-	overflow:hidden;
+#logo>img {
+	width: 6.5rem;
+	height: 6.5rem;
+}
+
+/* ----------------------------------------------------------------- */
+
+#introd {
+	color: white;
+}
+
+#hist {
+	background-color: #009c3b;
+}
+
+#sideimg {
+	overflow: hidden;
 	height: 90vw;
 }
-#sideimg > img{		
+
+#sideimg>img {
 	object-fit: cover;
 }
 
 /* ----------------------------------------------------------------- */
 
-#partners{
-	background-color:#ffdf00;
+#partners {
+	background-color: #ffdf00;
 }
 
-#partnerlist > div{
-	overflow:hidden;
-	text-align:center;
-	font-weight:bold;
+#partnerlist>div {
+	overflow: hidden;
+	text-align: center;
+	font-weight: bold;
 	padding-left: 6%;
 }
 
-.img-circle{
-	height:12vw;
-	width:12vw;
-	border:1px solid rgba(200,200,200,1);
-	border-radius:100%;
-	object-fit:cover
+.img-circle {
+	height: 12vw;
+	width: 12vw;
+	border: 1px solid rgba(200, 200, 200, 1);
+	border-radius: 100%;
+	object-fit: cover
 }
 
 /* --------------------------------------------------------- */
+
 :target {
-  display: block;
-  position: relative;
-  top: -10vh; 
-  visibility: hidden;
+	display: block;
+	position: relative;
+	top: -10vh;
+	visibility: hidden;
 }
 
 /* ------------------------------------------------------ */
 
-#footer{
-  background-color: rgb(32,32,64,0.92);
-  color:white;
-  text-align:justify;
-  font-size:.7rem;
+#footer {
+	background-color: rgb(32, 32, 64, 0.92);
+	color: white;
+	text-align: justify;
+	font-size: .7rem;
 }
 
-.footer-distributed{
+.footer-distributed {
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -163,48 +136,46 @@ section .innerTXT{
 	padding: 23px 20px;
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
 	display: inline-block;
 	vertical-align: top;
 }
 
 /* Footer left */
 
-.footer-distributed .footer-left{
+.footer-distributed .footer-left {
 	width: 40%;
 }
 
 /* The company logo */
 
-.footer-distributed h3{
-	color:  #ffffff;
+.footer-distributed h3 {
+	color: #ffffff;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
 }
 
-.footer-distributed h3 span{
-	color:  #5383d3;
+.footer-distributed h3 span {
+	color: #5383d3;
 }
 
 /* Footer links */
 
-.footer-distributed .footer-links{
-	color:  #ffffff;
+.footer-distributed .footer-links {
+	color: #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
 }
 
-.footer-distributed .footer-links a{
-	display:inline-block;
+.footer-distributed .footer-links a {
+	display: inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
+	color: inherit;
 }
 
-.footer-distributed .footer-company-name{
-	color:  #8f9296;
+.footer-distributed .footer-company-name {
+	color: #8f9296;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -212,12 +183,12 @@ section .innerTXT{
 
 /* Footer Center */
 
-.footer-distributed .footer-center{
+.footer-distributed .footer-center {
 	width: 35%;
 }
 
-.footer-distributed .footer-center i{
-	background-color:  #33383b;
+.footer-distributed .footer-center i {
+	background-color: #33383b;
 	color: #ffffff;
 	font-size: 25px;
 	width: 38px;
@@ -229,70 +200,68 @@ section .innerTXT{
 	vertical-align: middle;
 }
 
-.footer-distributed .footer-center i.fa-envelope{
+.footer-distributed .footer-center i.fa-envelope {
 	font-size: 17px;
 	line-height: 38px;
 }
 
-.footer-distributed .footer-center p{
+.footer-distributed .footer-center p {
 	display: inline-block;
 	color: #ffffff;
 	vertical-align: middle;
-	margin:0;
+	margin: 0;
 }
 
-.footer-distributed .footer-center p span{
-	display:block;
+.footer-distributed .footer-center p span {
+	display: block;
 	font-weight: normal;
-	font-size:14px;
-	line-height:2;
+	font-size: 14px;
+	line-height: 2;
 }
 
-.footer-distributed .footer-center p a{
-	color:  #5383d3;
-	text-decoration: none;;
+.footer-distributed .footer-center p a {
+	color: #5383d3;
+	text-decoration: none;
+	;
 }
-
 
 /* Footer Right */
 
-.footer-distributed .footer-right{
+.footer-distributed .footer-right {
 	width: 20%;
 }
 
-.footer-distributed .footer-company-about{
+.footer-distributed .footer-company-about {
 	line-height: 20px;
-	color:  #92999f;
+	color: #92999f;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
 }
 
-.footer-distributed .footer-company-about span{
+.footer-distributed .footer-company-about span {
 	display: block;
-	color:  #ffffff;
+	color: #ffffff;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons{
+.footer-distributed .footer-icons {
 	margin-top: 25px;
 }
 
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
 	display: inline-block;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
+	background-color: #33383b;
 	border-radius: 2px;
-
 	font-size: 20px;
 	color: #ffffff;
 	text-align: center;
 	line-height: 35px;
-
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
@@ -300,22 +269,88 @@ section .innerTXT{
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
-
-	.footer-distributed{
+	.footer-distributed {
 		font: bold 14px sans-serif;
 	}
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
+	.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
 		display: block;
 		width: 100%;
 		margin-bottom: 40px;
 		text-align: center;
 	}
-
-	.footer-distributed .footer-center i{
+	.footer-distributed .footer-center i {
 		margin-left: 0;
 	}
+}
 
+/* Fontes responsivas */
+
+html {
+	font-size: 1rem;
+}
+
+/* XS devices (portrait phones, 320px and up) */
+@media (min-width: 320px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	.jumbotron {
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0);
+		padding: 1.5em;
+		margin-bottom: 0;
+	}
+}
+
+/* SM devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	.jumbotron {
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0);
+		padding: 1.5em;
+		margin-bottom: 0;
+	}
+}
+
+/* MD devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* LG devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+	html {
+		font-size: 1.0rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* XL devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.1rem;
+	}
+	#header {
+		height: 10vh;
+	}
 }
