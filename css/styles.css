@@ -26,17 +26,80 @@ html {
 
 .jumbotron {
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: rgba(64, 64, 64, 0);
 	padding: 1.5em;
 	margin-bottom: 0;
+	min-height: 80vh;
 }
 
 .imageshow {
 	width: 100%;
 	margin: 0;
-	background-image: url("../img/sdu.jpg");
+	background-position: 50% 50%;
 	background-size: cover;
+	background-attachment: fixed;
 }
+
+/* Tint basal */
+
+#introd.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+		url("../img/asdu2.jpg");
+		transition: all 2s ease-in-out;
+}
+
+#hist.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+		), url("../img/asdu.jpg");
+		transition: all 2s linear;
+}
+
+#partners.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+		), url("../img/akop.jpg");
+		transition: all 2s linear;
+}
+
+/* Tint no hover */
+
+#introd.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+		url("../img/asdu2.jpg");
+		background-position:50% 15%;
+}
+
+#hist.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+		), url("../img/asdu.jpg");
+		background-position:50% 15%;
+}
+
+#partners.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+		), url("../img/akop.jpg");
+		background-position:50% -15%;
+}
+/* --------------------------------------------------- */
 
 section .innerTXT {
 	font-family: 'Montserrat', Sans-serif;
@@ -50,19 +113,33 @@ section .innerTXT {
 
 .card {
 	padding: 4%;
-	border-radius: 0;	
+	border-radius: 0;
 }
 
-#header, .card{
+.divisor{
+	height:10vh;
+	opacity:0.6
+}
+.divisor div{
+	width:50%;
+	margin:0 auto;
+	color:lightgray;
+}
+.divisor hr{
+	border-top: 1px solid rgba(64,64,64,0.5);
+
+}
+
+#header, .card,.divisor {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 /* ----------------------------------------------------------------- */
 
-#header {
+#header,.divisor {
 	font-family: 'Lato', sans-serif;
-	background-color: rgb(210, 210, 210, 0.92);
+	background-color: rgb(242, 242, 242, 0.92);
 	width: auto;
 	padding-top: 1em;
 }
@@ -84,18 +161,17 @@ section .innerTXT {
 	color: white;
 }
 
+#introd .innerTXT{
+	line-height:2em;
+	background-color:rgba(0,0,0,0);
+	color:white;
+}
+
+/* ----------------------------------------------------------------- */
+
 #hist {
 	background-color: #009c3b;
 	color: #3d3d3d;
-}
-
-#sideimg {
-	overflow: hidden;
-	height: 90vw;
-}
-
-#sideimg>img {
-	object-fit: cover;
 }
 
 /* ----------------------------------------------------------------- */
@@ -108,7 +184,8 @@ section .innerTXT {
 	overflow: hidden;
 	text-align: center;
 	font-weight: bold;
-	padding-left: 6%;
+	margin:1em 0 1em 0;
+	max-height:50%;
 }
 
 .img-circle {
@@ -309,14 +386,10 @@ html {
 	#logo {
 		margin-bottom: 1rem;
 	}
-	.jumbotron {
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0);
-		padding: 1.5em;
-		margin-bottom: 0;
-	}
-	#partnerlist > div > div{
-		display:none;
+	#partnerlist>div {
+		overflow: hidden;
+		text-align: center;
+		font-weight: bold;
 	}
 }
 
@@ -329,18 +402,11 @@ html {
 	#logo {
 		margin-bottom: 1rem;
 	}
-	.jumbotron {
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0);
-		padding: 1.5em;
-		margin-bottom: 0;
-	}
 	.conteudo {
 		min-height: 33vh;
 	}
-
-	#partnerlist > div > div{
-		display:block;
+	#partnerlist>div>div {
+		display: block;
 	}
 }
 
@@ -353,7 +419,6 @@ html {
 	#header {
 		height: 10vh;
 	}
-	
 }
 
 /* LG devices (desktops, 992px and up) */
@@ -365,7 +430,6 @@ html {
 	#header {
 		height: 10vh;
 	}
-	
 }
 
 /* XL devices (large desktops, 1200px and up) */
