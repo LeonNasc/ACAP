@@ -1,161 +1,220 @@
-/* Fontes responsivas */
-
-html {
-  font-size: 1rem;
-}
-
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
-  #logo{
-    display:hidden;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-  #logo{
-    display:hidden;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-}
-
 /* ------------------------------------------------------ */
 
-.container-fluid{
-	padding:0;
+html {
+	font-family: 'Montserrat', sans-serif
 }
 
-.conteudo{
-	min-height:90vh;
-	transition-timing-function: ease-in-out;
+.container-fluid {
+	padding: 0;
 }
 
-.chevron{
-	text-decoration:none;	
-	color:white;
-	-webkit-transition: width 2s; /* Safari */
-    transition: width 2s;
+.row {
+	margin: 0;
 }
 
-.chevron::hover{
-	font-size:2em;
+.chevron {
+	text-decoration: none;
+	color: white;
+	-webkit-transition: width 2s;
+	/* Safari */
+	transition: width 2s;
 }
 
-.jumbotron{
-  width:100%;
-	background-color:rgba(0,0,0,0);
-  padding:3em;
-  margin-bottom:0;
+.chevron::hover {
+	font-size: 2em;
 }
 
-.imageshow{
-	width:100%;
-	margin:0;
-  background-image:url("../img/sdu.jpg");
-  background-size:cover;
-  background-repeat:round;
+.jumbotron {
+	width: 100%;
+	background-color: rgba(64, 64, 64, 0);
+	padding: 1.5em;
+	margin-bottom: 0;
+	min-height: 80vh;
 }
 
-section .innerTXT{
-	background-color:rgba(0,0,0,0.3);
-	color:white;
-	padding:5%;
-	text-align:justify;
-	max-height:75%;
+.imageshow {
+	width: 100%;
+	margin: 0;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-.card{
-	padding:5%;
-	border-radius:0;
+/* Tint basal */
+
+#introd.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+		url("../img/asdu2.jpg");
+		transition: all 2s ease-in-out;
 }
-/* ----------------------------------------------------------------- */
-#header{
-	background-color: rgb(210,210,210,0.92);
-	width:100.5vw;
-	padding-top:1em;
+
+#hist.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+		), url("../img/asdu.jpg");
+		transition: all 2s linear;
+}
+
+#partners.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+		), url("../img/akop.jpg");
+		transition: all 2s linear;
+}
+
+/* Tint no hover */
+
+#introd.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+		url("../img/asdu2.jpg");
+		background-position:50% 15%;
+}
+
+#hist.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+		), url("../img/asdu.jpg");
+		background-position:50% 15%;
+}
+
+#partners.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+		), url("../img/akop.jpg");
+		background-position:50% -15%;
+}
+/* --------------------------------------------------- */
+
+section .innerTXT {
+	font-family: 'Montserrat', Sans-serif;
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #3d3d3d;
+	padding: 5%;
+	text-align: justify;
+	max-height: 75%;
+	font-size: .8rem;
+}
+
+.card {
+	padding: 4%;
+	border-radius: 0;
+}
+
+.divisor{
 	height:10vh;
+	opacity:0.6
+}
+.divisor div{
+	width:50%;
+	margin:0 auto;
+	color:lightgray;
+}
+.divisor hr{
+	border-top: 1px solid rgba(64,64,64,0.5);
+
 }
 
-#header  #logo{
-  width:5rem;
-  height:5rem;
-	margin-right:auto;
-	margin-left:1em;
-}
-
-#navbarNav{
-  margin-left:4rem;
-}
-
-#logo > img{
-  width:7rem;
-  height:7rem;
-}
-
-/* ----------------------------------------------------------------- */
-#introd{
-	color:white;	
-}
-
-#hist{
-	background-color:#009c3b;
-}
-
-#sideimg{
-	overflow:hidden;
-	height: 90vw;
-}
-#sideimg > img{		
-	object-fit: cover;
+#header, .card,.divisor {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 /* ----------------------------------------------------------------- */
 
-#partners{
-	background-color:#ffdf00;
+#header,.divisor {
+	font-family: 'Lato', sans-serif;
+	background-color: rgb(242, 242, 242, 0.92);
+	width: auto;
+	padding-top: 1em;
 }
 
-#partnerlist > div{
-	overflow:hidden;
-	text-align:center;
-	font-weight:bold;
+#header #logo {
+	width: 5rem;
+	height: 5rem;
+	margin-left: 1rem;
 }
 
-.img-circle{
-	height:10vw;
-	width:10vw;
-	border:1px solid rgba(200,200,200,1);
-	border-radius:100%;
-	object-fit:cover
+#logo>img {
+	width: 6.5rem;
+	height: 6.5rem;
+}
+
+/* ----------------------------------------------------------------- */
+
+#introd {
+	color: white;
+}
+
+#introd .innerTXT{
+	line-height:2em;
+	background-color:rgba(0,0,0,0);
+	color:white;
+}
+
+/* ----------------------------------------------------------------- */
+
+#hist {
+	background-color: #009c3b;
+	color: #3d3d3d;
+}
+
+/* ----------------------------------------------------------------- */
+
+#partners {
+	background-color: #ffdf00;
+}
+
+#partnerlist>div {
+	overflow: hidden;
+	text-align: center;
+	font-weight: bold;
+	margin:1em 0 1em 0;
+	max-height:50%;
+}
+
+.img-circle {
+	height: 12vw;
+	width: 12vw;
+	border: 1px solid rgba(200, 200, 200, 1);
+	border-radius: 100%;
+	object-fit: cover
 }
 
 /* --------------------------------------------------------- */
+
 :target {
-  display: block;
-  position: relative;
-  top: -10vh; 
-  visibility: hidden;
+	display: block;
+	position: relative;
+	top: -10vh;
+	visibility: hidden;
 }
 
 /* ------------------------------------------------------ */
 
-#footer{
-  background-color: rgb(32,32,64,0.92);
-  color:white;
-  text-align:justify;
-  font-size:.7rem;
+#footer {
+	background-color: rgb(32, 32, 64, 0.92);
+	color: white;
+	text-align: justify;
+	font-size: .7rem;
 }
 
-.footer-distributed{
+.footer-distributed {
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -165,48 +224,46 @@ section .innerTXT{
 	padding: 23px 20px;
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
 	display: inline-block;
 	vertical-align: top;
 }
 
 /* Footer left */
 
-.footer-distributed .footer-left{
+.footer-distributed .footer-left {
 	width: 40%;
 }
 
 /* The company logo */
 
-.footer-distributed h3{
-	color:  #ffffff;
+.footer-distributed h3 {
+	color: #ffffff;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
 }
 
-.footer-distributed h3 span{
-	color:  #5383d3;
+.footer-distributed h3 span {
+	color: #5383d3;
 }
 
 /* Footer links */
 
-.footer-distributed .footer-links{
-	color:  #ffffff;
+.footer-distributed .footer-links {
+	color: #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
 }
 
-.footer-distributed .footer-links a{
-	display:inline-block;
+.footer-distributed .footer-links a {
+	display: inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-	color:  inherit;
+	color: inherit;
 }
 
-.footer-distributed .footer-company-name{
-	color:  #8f9296;
+.footer-distributed .footer-company-name {
+	color: #8f9296;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -214,12 +271,12 @@ section .innerTXT{
 
 /* Footer Center */
 
-.footer-distributed .footer-center{
+.footer-distributed .footer-center {
 	width: 35%;
 }
 
-.footer-distributed .footer-center i{
-	background-color:  #33383b;
+.footer-distributed .footer-center i {
+	background-color: #33383b;
 	color: #ffffff;
 	font-size: 25px;
 	width: 38px;
@@ -231,70 +288,68 @@ section .innerTXT{
 	vertical-align: middle;
 }
 
-.footer-distributed .footer-center i.fa-envelope{
+.footer-distributed .footer-center i.fa-envelope {
 	font-size: 17px;
 	line-height: 38px;
 }
 
-.footer-distributed .footer-center p{
+.footer-distributed .footer-center p {
 	display: inline-block;
 	color: #ffffff;
 	vertical-align: middle;
-	margin:0;
+	margin: 0;
 }
 
-.footer-distributed .footer-center p span{
-	display:block;
+.footer-distributed .footer-center p span {
+	display: block;
 	font-weight: normal;
-	font-size:14px;
-	line-height:2;
+	font-size: 14px;
+	line-height: 2;
 }
 
-.footer-distributed .footer-center p a{
-	color:  #5383d3;
-	text-decoration: none;;
+.footer-distributed .footer-center p a {
+	color: #5383d3;
+	text-decoration: none;
+	;
 }
-
 
 /* Footer Right */
 
-.footer-distributed .footer-right{
+.footer-distributed .footer-right {
 	width: 20%;
 }
 
-.footer-distributed .footer-company-about{
+.footer-distributed .footer-company-about {
 	line-height: 20px;
-	color:  #92999f;
+	color: #92999f;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;
 }
 
-.footer-distributed .footer-company-about span{
+.footer-distributed .footer-company-about span {
 	display: block;
-	color:  #ffffff;
+	color: #ffffff;
 	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons{
+.footer-distributed .footer-icons {
 	margin-top: 25px;
 }
 
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
 	display: inline-block;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color:  #33383b;
+	background-color: #33383b;
 	border-radius: 2px;
-
 	font-size: 20px;
 	color: #ffffff;
 	text-align: center;
 	line-height: 35px;
-
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
@@ -302,22 +357,91 @@ section .innerTXT{
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
-
-	.footer-distributed{
+	.footer-distributed {
 		font: bold 14px sans-serif;
 	}
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
+	.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
 		display: block;
 		width: 100%;
 		margin-bottom: 40px;
 		text-align: center;
 	}
-
-	.footer-distributed .footer-center i{
+	.footer-distributed .footer-center i {
 		margin-left: 0;
 	}
+}
 
+/* Fontes responsivas */
+
+html {
+	font-size: 1rem;
+}
+
+/* XS devices (portrait phones, 320px and up) */
+
+@media (min-width: 320px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	#partnerlist>div {
+		overflow: hidden;
+		text-align: center;
+		font-weight: bold;
+	}
+}
+
+/* SM devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	.conteudo {
+		min-height: 33vh;
+	}
+	#partnerlist>div>div {
+		display: block;
+	}
+}
+
+/* MD devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* LG devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+	html {
+		font-size: 1.0rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* XL devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.1rem;
+	}
+	#header {
+		height: 10vh;
+	}
+	.conteudo {
+		min-height: 90vh;
+	}
 }
