@@ -4,12 +4,12 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   <title>ACAP - Associação dos Concessionários Aeroportuários</title>
-  <link rel="stylesheet" href="css/bootstrap.css"></link>
+  <link rel="stylesheet" href="css/bootstrap.min.css"></link>
   <link rel="stylesheet" href="css/fontawesome.css"></link>
   <link rel="stylesheet" href="css/fontawesome-all.css"></link>
   <link rel="stylesheet" href="css/styles.css"></link>
 
-  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 
@@ -67,15 +67,19 @@
         </span>
       </div>
       <div class="col-12">
-          <a id="to_historia" href="#historia" class="chevron">
-            <center>
-              <i class="fas fa-chevron-down"></i>
-            </center>
-          </a>
-        </div>      
+        <a id="to_historia" href="#historia" class="chevron">
+          <center>
+            <i class="fas fa-chevron-down"></i>
+          </center>
+        </a>
+      </div>
     </section>
     <!-- --------------------------------------------------------------------------------------------- -->
-    <div class="divisor"><div><hr></div></div>
+    <div class="divisor">
+      <div>
+        <hr>
+      </div>
+    </div>
     <!-- --------------------------------------------------------------------------------------------- -->
     <section id="hist" class="conteudo imageshow">
       <div class="jumbotron row">
@@ -168,7 +172,11 @@
       </div>
     </section>
     <!-- --------------------------------------------------------------------------------------------- -->
-    <div class="divisor"><div><hr></div></div>
+    <div class="divisor">
+      <div>
+        <hr>
+      </div>
+    </div>
     <!-- --------------------------------------------------------------------------------------------- -->
 
     <a id="parceiros"></a>
@@ -176,34 +184,40 @@
       <div class="jumbotron row">
         <div class="card col-12 innerTXT">
 
-          <center><h3 class="col-12">Empresas parceiras da ACAP</h3></center>
+          <center>
+            <h3 class="col-12">Empresas parceiras da ACAP</h3>
+          </center>
           <hr>
 
           <div id="partnerlist" class="row">
             <div class="col-6">
               <img class="img-circle" src="img/havaianas-logo.png"></img>
-              <div><br> Havaianas</div>
+              <div>
+                <br> Havaianas</div>
             </div>
 
             <div class="col-6">
               <img class="img-circle" src="img/kopenhagen-chocolates-original.png"></img>
-              <div><br> Kopenhagen</div>
+              <div>
+                <br> Kopenhagen</div>
             </div>
 
             <div class="col-6">
               <img class="img-circle" src="img/airfarma-logo.jpg"></img>
-              <div><br>Drogarias AirFarma</div>
+              <div>
+                <br>Drogarias AirFarma</div>
             </div>
 
             <div class="col-6">
               <img class="img-circle" src="img/14bis-logo.jpg"></img>
-              <div><br>Restaurante 14Bis</div>
+              <div>
+                <br>Restaurante 14Bis</div>
             </div>
 
             <div class="col">
               <img class="img-circle" src="img/bobs-logo.jpg"></img>
               <br> Bob's
-            </div>            
+            </div>
           </div>
           <hr>
           <small>Somos mais de 12312312312 lojistas espalhados em 12313123 aeroportos do Brasil</small>
@@ -220,10 +234,28 @@
 
     </section>
 
-  <!-- --------------------------------------------------------------------------------------------- -->
-  <div class="divisor">
-    <div><hr></div></div>
-  <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <div class="divisor">
+      <div>
+        <hr>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <a id="noticias"></a>
+    <section id="news" class="conteudo imageshow">
+      <div class="jumbotron container-fluid">
+        <div class="card innerTXT">
+          <h4>Notícias</h4>
+          <hr>
+          <div id="newspanel" class="row">
+            <div  >
+              <h5 class="text-muted">Carregando notícias...</h5>
+            </div>
+        </div>
+      </div>
+    </section>
+
+
   </main>
   <a id="contato"></a>
   <footer id="footer" class="footer-distributed">
@@ -254,7 +286,10 @@
       <div>
         <i class="fas fa-map-marker"></i>
         <p>
-          <span><small>Av. 20 de Janeiro, s/n <br>Terminal 2, Piso de Embarque, Jirau-entre Setores B e C</small></span> Ilha do Governador - Rio de Janeiro</p>
+          <span>
+            <small>Av. 20 de Janeiro, s/n
+              <br>Terminal 2, Piso de Embarque, Jirau-entre Setores B e C</small>
+          </span> Ilha do Governador - Rio de Janeiro</p>
       </div>
 
       <div>
@@ -280,11 +315,12 @@
 
 
     </div>
-
+    <a href="https://newsapi.org/">
+      <i class="fab fa-google" aria-hidden="true"></i> Powered by News API</a>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="js/bootstrap.js">  </script>
-
+  <script src="js/bootstrap.min.js">  </script>
+  <script src="js/scripts.js">  </script>
 </body>
 
 
