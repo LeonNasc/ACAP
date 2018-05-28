@@ -35,10 +35,8 @@ function getLastWeekAsISOString(){
 
 function showNews(newsarray){
   let newsHTML = "";
-  console.log(news);
   count = 0;
   newsarray.forEach(function(news){
-    console.log(news)
     count++;
     
     if (count > 4){
@@ -116,11 +114,35 @@ function insertNewsIntoPage(newsHTML){
   panel.innerHTML = newsHTML;
 }
 
-window.onload = getNews();
+//window.onload = getNews();
+// --------------------------------------------------------------------------------//
+
+function fillPageContent(contents){
+  let intro = document.getElementById("introTXT");
+  let historia = document.getElementById("historiaTXT");
+
+  contents = JSON.parse(contents);
+
+  intro.innerHTML = contents['intro'];
 
 
+}
+
+function requestContent(){
+  let Request =  new XMLHttpRequest();
+  Request.open("GET", 'controller.php?task=GETCTT&type=TXT', true);
+  Request.send();
+
+  Request.onload = function(){
+    fillPageContent(Request.responseText);
+  }
+}
+
+// --------------------------------------------------------------------------------//
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+// --------------------------------------------------------------------------------//

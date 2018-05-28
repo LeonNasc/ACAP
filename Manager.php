@@ -33,10 +33,10 @@ class Manager{
     }
   }
 
-  public function setContents($type){
+  public function getContents($type){
     switch($type){
       case 'TXT':
-        TextWriter::getTexts();
+        print(TextWriter::getTexts());
       break;
       case 'IMG':
         ImageChanger::getImages();
@@ -48,7 +48,7 @@ class Manager{
     NewsWriter::writeNews($news);
   } 
 
-  public function setNews(){
+  public function getNews(){
     NewsWriter::getNews();
   }
 

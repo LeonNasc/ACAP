@@ -26,14 +26,34 @@ class TextWriter extends FileReader{
   }
 
   private static function HTMLifyText($text){
+    
+    $paragraphs = explode("\n",$text);
+    $count = 0;
 
+    foreach($paragraphs as $paragraph){
+      $paragraphs[$count] = "<p>";
+      $paragraphs[$count] .= $paragraph;
+      $paragraphs[$count] .= "</p>";
+      $count++;      
+    }
+    return implode("",$paragraphs);
   }
 
   public static function getTexts(){    
     
-    $a = TextWriter::readContents(self::TXT_DIR);
-    
-    print($a);
+    $plaintexts = TextWriter::readFolderContents(self::TXT_DIR);
+    $HTML = [];
+
+    foreach($plaintexts as $section => $text){
+      //Caracteres removidos: 6 (numero, underscore e .txt)
+      $section_name = substr($section,2,strlen($section)-6);
+      $HTML[$section_name] = TextWriter::HTMLifyText($text);
+    }
+
+    return JSON_encode($HTML);
   }
+  
+
+  
 }
 ?>

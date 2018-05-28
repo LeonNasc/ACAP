@@ -41,16 +41,19 @@ class FileReader{
     fwrite($file, $content);
   }
 
-  protected static function readContents($dir){
+  protected static function readFolderContents($dir){
     $files = scandir($dir);
-    $content = "";
+    $contentArray = [];
+
+    //Contamos a partir de 2 pois 0 e 1 são . e .. , respectivamente
     for ($i = 2;$i<sizeof($files);$i++){
       $file = fopen($dir.$files[$i],'r');
 
-      $content .= fread($file, filesize($dir.$files[$i]));
+      $contentArray[$files[$i]] = fread($file, filesize($dir.$files[$i]));
     }
 
-    return $content;
+    return $contentArray;
   }
+
 }
 ?>
