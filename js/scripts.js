@@ -100,8 +100,8 @@ function makeSmallNews(news){
   let html_sm = `
     <div class="card col-md-4 col-xs-12">
       <div class="news-sm">
-
-        <h6>${news.title}</h6>
+        <hr>
+        <h5>${news.title}</h5>
         <hr>
         <a href='${news.url}'fonte">Fonte: ${news.source.name} </a>
       </div>

@@ -70,6 +70,15 @@ html {
 		transition: all 2s linear;
 }
 
+#news.imageshow {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+		), url("../img/news.jpg");
+		transition: all 2s linear;
+}
+
 /* Tint no hover */
 
 #introd.imageshow:hover {
@@ -99,6 +108,16 @@ html {
 		), url("../img/akop.jpg");
 		background-position:50% -15%;
 }
+
+#news.imageshow:hover {
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+		), url("../img/news.jpg");
+		background-position:50% -15%;
+}
+
 /* --------------------------------------------------- */
 
 section .innerTXT {
@@ -117,12 +136,12 @@ section .innerTXT {
 #newspanel > div{
 	margin:0 auto;
 	margin-top:1em;
-	
+
 }
 
 .news-sm{ 
 	/* Tem de ser usado com col-3 */
-	height:15vh;
+	min-height:15vh;
 	font-size:.8em;
 }
 .news-md{
@@ -225,7 +244,6 @@ section .innerTXT {
 }
 
 #news .card{
-	background-color:rgb(255,255,255);
 	color:rgb(64,64,64);
 }
 
