@@ -1,0 +1,77 @@
+
+/* ----------------------------------------------------------------- */
+                   /* Fontes responsivas */
+/* ----------------------------------------------------------------- */
+html {
+  font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+}
+
+/* XS devices (portrait phones, 320px and up) */
+
+@media (min-width: 320px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	#partnerlist>div {
+		overflow: hidden;
+		text-align: center;
+		font-weight: bold;
+	}
+}
+
+/* SM devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#logo {
+		margin-bottom: 1rem;
+	}
+	.conteudo {
+		min-height: 33vh;
+	}
+	#partnerlist>div>div {
+		display: block;
+	}
+}
+
+/* MD devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+	html {
+		font-size: 0.8rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* LG devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+	html {
+		font-size: 1.0rem;
+	}
+	#header {
+		height: 10vh;
+	}
+}
+
+/* XL devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+	html {
+		font-size: 1.1rem;
+	}
+	#header {
+		height: 10vh;
+	}
+	.conteudo {
+		min-height: 90vh;
+	}
+}

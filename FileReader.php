@@ -50,8 +50,9 @@ class FileReader{
       $file = fopen($dir.$files[$i],'r');
 
       $contentArray[$files[$i]] = fread($file, filesize($dir.$files[$i]));
+      FileReader::closeFile($file);
     }
-
+    
     return $contentArray;
   }
 

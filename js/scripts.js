@@ -17,12 +17,10 @@ function getNews() {
 function getSearchTerms(){
 
   let url = "https://newsapi.org/v2/everything?"+
-            "q=(aeroportos+OR+Santos+Dumont+OR+Galeão)+AND+Brasil&"+
-            `from=${getLastWeekAsISOString()}` +
-            "sources=globo"+
-            "language=pt+OR+en"+
-            "pageSize=4"+
-            "sortBy=relevancy&" +
+            "q=aeroportos&"+
+            `from=${getLastWeekAsISOString()}&` +
+            "sources=globo&"+
+            "sortBy=popularity&" +
             "apiKey=049520bc362c4cb495123530b22b70fd"
 
   return url;
@@ -34,26 +32,30 @@ function getLastWeekAsISOString(){
 }
 
 function showNews(newsarray){
+  newsarray = newsarray.slice(0,8);
   let newsHTML = "";
   count = 0;
   newsarray.forEach(function(news){
-    count++;
     
-    if (count > 4){
-      //Faz nada;
+    if (count >= 11){
+      count = 0;
     }
-    else if(count%3 == 1){
+    else if(news.description == "" && count < 8){
+      newsHTML += makeSmallNews(news);
+      count += 4;
+    }
+    else if(count < 5){
       newsHTML += makeLargeNews(news);
+      count += 7;
     }
-    else if(count%3 == 0){
+    else if(count < 8 ){
       newsHTML += makeMediumNews(news);
+      count += 4;
     }
     else{
       newsHTML += makeSmallNews(news);
+      count += 4;
     }
-    
-    
-
   });
 
   insertNewsIntoPage(newsHTML);
@@ -114,29 +116,40 @@ function insertNewsIntoPage(newsHTML){
   panel.innerHTML = newsHTML;
 }
 
-//window.onload = getNews();
 // --------------------------------------------------------------------------------//
-
-function fillPageContent(contents){
-  let intro = document.getElementById("introTXT");
-  let historia = document.getElementById("historiaTXT");
-
-  contents = JSON.parse(contents);
-
-  intro.innerHTML = contents['intro'];
-
-
-}
-
 function requestContent(){
   let Request =  new XMLHttpRequest();
   Request.open("GET", 'controller.php?task=GETCTT&type=TXT', true);
   Request.send();
 
   Request.onload = function(){
+    console.log(Request.responseText);
     fillPageContent(Request.responseText);
   }
 }
+
+function fillPageContent(contents){
+
+  contents = JSON.parse(contents);
+
+  fillIntro(contents['introtitle'] + contents['intro']);
+  fillHist(contents['historiatitle'] + contents['historia'] + contents['historiasignature']);
+
+
+}
+
+function fillIntro(contents){
+  let intro = document.getElementById("introTXT");
+  intro.innerHTML = contents;
+}
+
+function fillHist(contents){
+  let historiaTXT = document.getElementById("historiaTXT");
+
+  historiaTXT.innerHTML = contents;
+}
+
+
 
 // --------------------------------------------------------------------------------//
 function getRandomInt(min, max) {
@@ -146,3 +159,8 @@ function getRandomInt(min, max) {
 }
 
 // --------------------------------------------------------------------------------//
+
+window.onload = function(){
+  requestContent();
+  getNews();
+} 
