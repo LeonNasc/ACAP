@@ -43,17 +43,39 @@ class TextWriter extends FileReader{
     $paragraphs = explode("\n",$paragraphs);
     $count = 0;
 
+    //Cada paragrafo deve ocupar uma linha continua no arquivo de texto
+    //pois cada caractere \n inicia um novo parágrafo
     foreach($paragraphs as $paragraph){
       $paragraphs[$count] = "<p>";
       $paragraphs[$count] .= $paragraph;
       $paragraphs[$count] .= "</p>";
       $count++;      
     }
-    return implode("",$paragraphs);
+    return TextWriter::balanceParagraphs($paragraphs);
+  }
+
+  private static function balanceParagraphs($paragraphs){
+    //$paragraphs é array
+    $halfway_point =  floor(sizeof($paragraphs)/2);
+    $first_half = array_slice($paragraphs,0,$halfway_point);
+    $second_half = array_slice($paragraphs,$halfway_point+1);
+
+    $firsthalf_HTML = implode("",$first_half);
+    $secondhalf_HTML = implode("",$second_half);
+
+    $iterable = Array($firsthalf_HTML,$secondhalf_HTML);
+
+    for($i = 0; i<sizeof($iterable);$i++){
+      $iterable[$i] = '<div class="col-xs-12 col-md-6>'
+                        .$iterable.[$i].
+                      '</div>';
+    }
+    
+    return implode("",$iterable);
   }
 
   private static function HTMLifyTitles($title){
-    return "<h3>".$title ."</h3><hr style='width:100%'>";
+    return "<h3 class='title'>".$title ."</h3><hr style='width:100%'>";
   }
 
   private static function HTMLifySignature($signature){

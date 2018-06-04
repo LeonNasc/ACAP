@@ -134,8 +134,6 @@ function fillPageContent(contents){
 
   fillIntro(contents['introtitle'] + contents['intro']);
   fillHist(contents['historiatitle'] + contents['historia'] + contents['historiasignature']);
-
-
 }
 
 function fillIntro(contents){
@@ -160,7 +158,7 @@ function getRandomInt(min, max) {
 
 // --------------------------------------------------------------------------------//
 
-window.onload = function(){
+document.body.onload = function(){
   requestContent();
   getNews();
 } 
