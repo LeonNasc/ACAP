@@ -23,25 +23,31 @@
 
     <h3 class="text-muted">Abaixo, você poderá preencher e editar os campos do site</h3>
 
-    <form id="campos">
+    <form id="campos" method="GET" action="controller.php">
+      
+      <fieldset class="form-group card">
+        <legend>Primeira Janela</legend>
 
-      <fieldset>
-        <legend>Introdução</legend>
-
-        <label for="introtitle"></label>
-        <input type="text" id="introtitle" name="introtitle"></input>
-
-        <textarea id="intro"></textarea>
+        <label for="introtitle">Título</label>
+        <input class="form-control" type="text" id="introtitle" name="introtitle"></input>
+        <br><hr>
+        <label for="intro">Conteúdo</label>
+        <textarea class="form-control" form="campos" name="intro"></textarea>
       </fieldset>
 
-      <fieldset>
-        <legend></legend>
+      <fieldset class="form-group card">
+        <legend>Segunda Janela</legend>
+
+        <label for="historiatitle">Título</label>
+        <input class="form-control" type="text" id="historiatitle" name="historiatitle"></input>
+        <br><hr>
+        <label for="historia">Conteúdo</label>
+        <textarea class="form-control" form="campos" name="historia"></textarea>
       </fieldset>
 
-      <fieldset>
-        <legend></legend>
-      </fieldset>
-
+      <input type="hidden" value="SETCTT" name="task"/>
+      <input type="hidden" value="TXT" name="type"/>
+      <input type="submit" class="btn btn-success" value="Atualizar"/>
     </form>
   </div>
   <script src="js/scripts.js">  </script>

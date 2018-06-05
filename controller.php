@@ -15,6 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
   if ($task == 'GETCTT'){
     print($manager->getContents($_GET['type']));
   }
+  if ($task == 'SETCTT'){
+    print($manager->updateContent($_GET['type'],$_GET));
+  }
   else if ($task == 'GETNWS'){
     print($manager->getNews());
   }

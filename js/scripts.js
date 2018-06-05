@@ -123,13 +123,13 @@ function requestContent(){
   Request.send();
 
   Request.onload = function(){
-    console.log(Request.responseText);
     fillPageContent(Request.responseText);
   }
 }
 
 function fillPageContent(contents){
 
+  console.log(contents);
   contents = JSON.parse(contents);
 
   fillIntro(contents['introtitle'] + contents['intro']);
