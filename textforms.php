@@ -34,6 +34,9 @@
   </style>
 </head>
 
+
+<?php if($_SESSION['authentication_status'] = True):?>
+
 <body class="container-fluid">
 
 
@@ -65,7 +68,7 @@
 
       <h4 class="text-muted">Abaixo, você poderá preencher e editar os campos do site</h4>
 
-      <form id="campos" method="GET" action="controller.php">
+      <form id="campos" method="POST" action="controller.php">
 
         <fieldset class="form-group card">
           <legend>Primeira Janela</legend>
@@ -110,3 +113,7 @@
 </body>
 
 </html>
+
+<?php else:?>
+
+<?php endif;?>

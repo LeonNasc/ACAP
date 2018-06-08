@@ -24,7 +24,6 @@ class TextWriter extends FileReader
 
     public static function UpdateTexts($content_array)
     { 
-      var_dump($content_array);
         foreach ($content_array as $area => $text) {
           if(trim($text) == ""){
             continue;
