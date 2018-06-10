@@ -7,21 +7,26 @@ class Authenticator{
 
   public function __construct($token){
 
-    if($token === $this->login){
+    if($token == Authenticator::PERMISSION_TOKEN){
       $this->activateLogStatus();
     }
     else{
-      throw Exception("Senha inválida");
+      throw new Exception("Senha inválida");
     }    
   }
 
   private function activateLogStatus(){
     $this->login_status = True;
-    return getStatus();
+    return Authenticator::setSessionStatus($this);
   }
   public function deactivateLogStatus(){
     $this->login_status = False;
-    return getStatus();
+    return Authenticator::setSessionStatus($this);
+  }
+  
+  private static function setSessionStatus($authToken){
+    session_start();
+    $_SESSION['authentication_status'] = $authToken->getStatus();
   }
 
   public function getStatus(){

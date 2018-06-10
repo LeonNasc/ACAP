@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML>
 <html>
 
@@ -35,7 +36,7 @@
 </head>
 
 
-<?php if($_SESSION['authentication_status'] = True):?>
+<?php if($_SESSION['authentication_status'] == True):?>
 
 <body class="container-fluid">
 
@@ -115,5 +116,15 @@
 </html>
 
 <?php else:?>
-
+<div class="container card">
+<h1>Login de Administrador</h1>
+<form action="controller.php" method="POST">
+  
+  <label for="token">Token de autenticação</label>
+  <input class="form-control" type="text" name="token" placeholder="token de autenticação"/>
+  <input type="hidden" name="task" value="AUTH"/>
+  
+  
+</form>
+</div>
 <?php endif;?>

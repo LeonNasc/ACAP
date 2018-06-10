@@ -10,6 +10,7 @@ ini_set('display_errors', 'on');
 require_once("Manager.php");
 $manager = new Manager();
 
+
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
   $task = $_GET['task'];
   if ($task == 'GETCTT'){
@@ -22,7 +23,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 else{
   $task = $_POST['task'];
   if ($task == 'AUTH'){
-    print($manager->getContents($_GET['type']));
+    try{
+      $manager->authenticate($_POST['token']);
+    }
+    catch(Exception $e){
+      echo "Senha inválida";
+    }
   }
   else if ($task == 'SETCTT'){
     print($manager->updateContent($_GET['type'],$_GET));

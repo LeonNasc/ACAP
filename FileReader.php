@@ -8,10 +8,7 @@
  */
 
 class FileReader{
-
   
-  const IMG_DIR = __DIR__.'/img';
-  const NEWS_DIR = __DIR__.'/news';
 
   protected static function openFile($path,$write_enabled = false){
 

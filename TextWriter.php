@@ -7,11 +7,12 @@
  * @author Leon de França Nascimento
  */
 require_once 'FileReader.php';
+define('TXT_DIR', __DIR__ . '/txt/');
 
 class TextWriter extends FileReader
 {
 
-    const FILENAMES = ["introtitle" => '0_introtitle.txt',
+    private static $FILENAMES = ["introtitle" => '0_introtitle.txt',
         "intro" => '1_intro.txt',
         "historiatitle" => '2_historiatitle.txt',
         "historia" => '3_historia.txt',
@@ -20,7 +21,7 @@ class TextWriter extends FileReader
         "parceiros" => '6_parceiros.txt',
     ];
 
-    const TXT_DIR = __DIR__ . '/txt/';
+    const TXT_DIR = TXT_DIR;
 
     public static function UpdateTexts($content_array)
     { 
@@ -36,7 +37,7 @@ class TextWriter extends FileReader
     {
         
 
-        $section = TextWriter::openFile(TextWriter::TXT_DIR . TextWriter::FILENAMES[$area], true);
+        $section = TextWriter::openFile(TextWriter::TXT_DIR . TextWriter::$FILENAMES[$area], true);
         TextWriter::writeContents($section, $text);
         TextWriter::closeFile($section);
     }

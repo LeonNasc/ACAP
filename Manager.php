@@ -50,6 +50,9 @@ class Manager
                 break;
         }
     }
+    public function authenticate($token){
+       return new Authenticator($token);
+    }
 
     public function updateNews($news)
     {
