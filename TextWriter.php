@@ -96,8 +96,7 @@ class TextWriter extends FileReader
     private static function balanceParagraphs($paragraph_texts)
     {
         //$paragraphs é array
-        
-        $paragraphs = explode("<p></p>", $paragraph_texts);
+        $paragraphs = preg_split("/<p>[\s]<\/p>/", $paragraph_texts);
         
         $halfway_point = floor(sizeof($paragraphs) / 2);
         $first_half = array_slice($paragraphs, 0, $halfway_point);
