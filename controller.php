@@ -6,7 +6,7 @@
  * @author Leon de França Nascimento
  */
 ini_set('display_errors', 'on');
-
+session_start();
 require_once("Manager.php");
 $manager = new Manager();
 
@@ -19,19 +19,26 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
   else if ($task == 'GETNWS'){
     print($manager->getNews());
   }
+  else if($task == 'LOGF'){
+    $_SESSION['authentication_status'] = false;
+    header('Location: /ACAP/textforms.php');
+  }
 }
 else{
   $task = $_POST['task'];
   if ($task == 'AUTH'){
     try{
       $manager->authenticate($_POST['token']);
+      header('Location: /ACAP/textforms.php');
     }
     catch(Exception $e){
-      echo "Senha inválida";
+      print("<div class='alert alert-warning'>Senha inválida</div>");
+      header('Location: /ACAP/textforms.php');
     }
   }
   else if ($task == 'SETCTT'){
-    print($manager->updateContent($_GET['type'],$_GET));
+    print($manager->updateContent($_POST['type'],$_POST));
+    header('Location: /ACAP/content.html');
   }
   else if ($task == 'GETNWS'){
     print($manager->getNews());

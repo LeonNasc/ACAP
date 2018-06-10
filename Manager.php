@@ -29,6 +29,8 @@ class Manager
                     //Content is an array of texts
                     unset($content['task']);
                     unset($content['type']);
+                    $content['historiasignature'] = $content['historiasignature'] . "\n" . $content['historiasignaturecargo'];
+                    unset($content['historiasignaturecargo']);
                     TextWriter::UpdateTexts($content);
                     break;
                 case 'IMG':

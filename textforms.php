@@ -50,7 +50,10 @@
       </a>
       <ul class="navbar-nav col">
         <li class="nav-item">
-          <a class="nav-link text-muted" href="http://www.acap.com.br/#intro">Ir ao site</a>
+          <a class="nav-link text-muted" href="/ACAP/content.html#intro">Ir ao site</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted" href="/ACAP/controller.php?task=LOGF">Log off</a>
         </li>
       </ul>
     </div>
@@ -91,6 +94,10 @@
           <hr>
           <label for="historia">Conteúdo</label>
           <textarea class="form-control" form="campos" name="historia"></textarea>
+          
+          <label for="historiasignature">Assinatura</label>
+          <input class="form-control" type="text" id="historiasignature" name="historiasignature" placeholder="Fulano de tal"></input>
+          <input class="form-control" type="text" id="historiasignaturecargo" name="historiasignaturecargo" placeholder="Auxiliar de limpeza"></input>
         </fieldset>
 
         <input type="hidden" value="SETCTT" name="task" />
@@ -106,16 +113,31 @@
         <div id="historiaTXT" class="row">
         </div>
       </div>
-
-
     </div>
-  </div>
-  <script src="js/scripts.js">  </script>
-</body>
-
-</html>
-
 <?php else:?>
+<header id="header" class="sticky-top navbar navbar-expand-md ">
+
+
+    <div class="collapse navbar-collapse row" id="navbarNav">
+      <a id="logo" class="navbar-brand col" href="#">
+        <img class="border rounded-left border-secondary" src="img/logo.png" alt="LOGO" />
+      </a>
+      <ul class="navbar-nav col">
+        <li class="nav-item">
+          <a class="nav-link text-muted" href="/ACAP/content.html#intro">Ir ao site</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted" href="/ACAP/controller.php?task=LOGF">Log off</a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-angle-double-down"></i> ACAP
+    </button>
+  </header>
+
 <div class="container card">
 <h1>Login de Administrador</h1>
 <form action="controller.php" method="POST">
@@ -128,3 +150,8 @@
 </form>
 </div>
 <?php endif;?>
+ </div>
+  <script src="js/scripts.js">  </script>
+</body>
+
+</html>

@@ -25,6 +25,7 @@ class TextWriter extends FileReader
 
     public static function UpdateTexts($content_array)
     { 
+        
         foreach ($content_array as $area => $text) {
           if(trim($text) == ""){
             continue;
@@ -88,15 +89,16 @@ class TextWriter extends FileReader
             $paragraphs[$count] .= "</p>";
             $count++;
         }
-
+       
         return implode("", $paragraphs);
     }
 
     private static function balanceParagraphs($paragraph_texts)
     {
         //$paragraphs é array
+        
         $paragraphs = explode("<p></p>", $paragraph_texts);
-
+        
         $halfway_point = floor(sizeof($paragraphs) / 2);
         $first_half = array_slice($paragraphs, 0, $halfway_point);
         $second_half = array_slice($paragraphs, $halfway_point + 1);
@@ -129,7 +131,7 @@ class TextWriter extends FileReader
 
         $HTML = "<hr><div id='signature'>";
         $HTML .= "<strong>" . $lines[0] . "</strong>";
-        $HTML .= "<br><small>" . $lines[0] . "</small>";
+        $HTML .= "<br><small>" . $lines[1] . "</small>";
         $HTML .= "</div>";
 
         return $HTML;
