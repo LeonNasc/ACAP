@@ -77,27 +77,42 @@
         <fieldset class="form-group card">
           <legend>Primeira Janela</legend>
 
-          <label for="introtitle">Título</label>
-          <input class="form-control" type="text" id="introtitle" name="introtitle"></input>
+          <label for="A1T">Título</label>
+          <input class="form-control" type="text" id="A1T" name="introtitle"></input>
           <br>
           <hr>
-          <label for="intro">Conteúdo</label>
-          <textarea class="form-control" form="campos" name="intro"></textarea>
+          <label for="A1C">Conteúdo</label>
+          <textarea class="form-control" form="campos" name="A1C"></textarea>
         </fieldset>
 
         <fieldset class="form-group card">
           <legend>Segunda Janela</legend>
 
-          <label for="historiatitle">Título</label>
-          <input class="form-control" type="text" id="historiatitle" name="historiatitle"></input>
+          <label for="A2T">Título</label>
+          <input class="form-control" type="text" id="A2T" name="historiatitle"></input>
           <br>
           <hr>
-          <label for="historia">Conteúdo</label>
-          <textarea class="form-control" form="campos" name="historia"></textarea>
+          <label for="A2C">Conteúdo</label>
+          <textarea class="form-control" form="campos" name="A2C"></textarea>
           
-          <label for="historiasignature">Assinatura</label>
-          <input class="form-control" type="text" id="historiasignature" name="historiasignature" placeholder="Fulano de tal"></input>
-          <input class="form-control" type="text" id="historiasignaturecargo" name="historiasignaturecargo" placeholder="Auxiliar de limpeza"></input>
+          <label for="A2S">Assinatura</label>
+          <input class="form-control" type="text" id="A2S" name="historiasignature" placeholder="Fulano de tal"></input>
+          <input class="form-control" type="text" id="A2SS" name="historiasignaturecargo" placeholder="Auxiliar de limpeza"></input>
+        </fieldset>
+
+        <fieldset class="form-group card">
+          <legend>Terceira Janela</legend>
+
+          <label for="A3T">Título</label>
+          <input class="form-control" type="text" id="A3t" name="A3T"></input>
+          <br>
+          <hr>
+          <label for="A3C">Conteúdo</label>
+          <textarea class="form-control" form="campos" name="A3C"></textarea>
+          
+          <label for="A2S">Assinatura</label>
+          <input class="form-control" type="text" id="A2S" name="A2S" placeholder="Fulano de tal"></input>
+          <input class="form-control" type="text" id="A2S" name="A2SS" placeholder="Auxiliar de limpeza"></input>
         </fieldset>
 
         <input type="hidden" value="SETCTT" name="task" />
@@ -106,11 +121,11 @@
       </form>
     </div>
     <div class="col">
-      <div id="introTXT" class="card">
+      <div id="A1C" class="card">
 
       </div>
       <div class="card">
-        <div id="historiaTXT" class="row">
+        <div id="A2C" class="row">
         </div>
       </div>
     </div>

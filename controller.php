@@ -40,8 +40,8 @@ else{
     print($manager->updateContent($_POST['type'],$_POST));
     header('Location: /ACAP/content.html');
   }
-  else if ($task == 'GETNWS'){
-    print($manager->getNews());
+  else if ($task == 'PUBNEWS'){
+    print($manager->publishNews());
   }
 }
 

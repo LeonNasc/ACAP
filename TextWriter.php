@@ -12,13 +12,13 @@ define('TXT_DIR', __DIR__ . '/txt/');
 class TextWriter extends FileReader
 {
 
-    private static $FILENAMES = ["introtitle" => '0_introtitle.txt',
-        "intro" => '1_intro.txt',
-        "historiatitle" => '2_historiatitle.txt',
-        "historia" => '3_historia.txt',
-        "historiasignature" => '4_historiasignature.txt',
-        "parceirostitle" => '5_parceirostitle.txt',
-        "parceiros" => '6_parceiros.txt',
+    private static $FILENAMES = ["A1T" => 'A1T.txt',
+        "A1C" => 'A1C.txt',
+        "A2T" => 'A2T.txt',
+        "A2C" => 'A2C.txt',
+        "A2S" => 'A2S.txt',
+        "A3T" => 'A3T.txt',
+        "A3C" => 'A3C.txt',
     ];
 
     const TXT_DIR = TXT_DIR;
@@ -51,10 +51,10 @@ class TextWriter extends FileReader
 
         foreach ($plaintexts as $section => $text) {
             //Caracteres removidos: 6 (numero, underscore e .txt)
-            $section_name = substr($section, 2, strlen($section) - 6);
+            $section_name = substr($section, 0, strlen($section) - 4);
             $HTML[$section_name] = TextWriter::HTMLifyText($text, $section_name);
 
-            if ($section_name == 'historia') {
+            if ($section_name == 'A2C') {
                 $HTML[$section_name] = TextWriter::balanceParagraphs($HTML[$section_name]);
             }
         }
@@ -65,9 +65,9 @@ class TextWriter extends FileReader
     private static function HTMLifyText($text, $section_name)
     {
 
-        if (strpos($section_name, 'title')) {
+        if (strpos($section_name, 'T')) {
             $HTML = TextWriter::HTMLifyTitles($text);
-        } else if (strpos($section_name, 'signature')) {
+        } else if (strpos($section_name, 'S')) {
             $HTML = TextWriter::HTMLifySignature($text);
         } else {
             $HTML = TextWriter::HTMLifyParagraphs($text);
@@ -121,7 +121,7 @@ class TextWriter extends FileReader
 
     private static function HTMLifyTitles($title)
     {
-        return "<h3 class='title'>" . $title . "</h3><hr style='width:100%'>";
+        return "<h3 class='title' style='width:100%;text-align:center;'>" . $title . "</h3><hr style='width:85%;margin:0 auto;margin-bottom:1em'>";
     }
 
     private static function HTMLifySignature($signature)

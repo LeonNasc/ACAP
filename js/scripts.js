@@ -34,7 +34,7 @@ function getLastWeekAsISOString(){
 function showNews(newsarray){
   newsarray = newsarray.slice(0,8);
   let newsHTML = "";
-  count = 0;
+  let count = 0;
   newsarray.forEach(function(news){
     
     if (count >= 11){
@@ -64,14 +64,14 @@ function showNews(newsarray){
 function makeLargeNews(news){
 
   let html_lg = `
-    <div class="card col-md-7 col-xs-12">
+    <div onclick="window.location.href=${news.url}" class="card col-md-7 col-xs-12">
       <div class="news-lg">
 
         <h6>${news.title}</h6>
         <hr>
         <p>${news.description}</p>
         <hr>
-        <a href='${news.url}'fonte">Fonte: ${news.source.name} </a>
+        <a href='${news.url}'>Fonte: ${news.source.name} </a>
       </div>
     </div>  
   `
@@ -81,14 +81,14 @@ function makeLargeNews(news){
 function makeMediumNews(news){
 
   let html_md = `
-    <div class="card col-md-4 col-xs-12">
+    <div onclick="window.location.href=${news.url}" class="card col-md-4 col-xs-12">
       <div class="news-md">
 
         <h6>${news.title}</h6>
         <hr>
         <small>${news.description}</small>
         <hr>
-        <a href='${news.url}'fonte">Fonte: ${news.source.name} </a>
+        <a href='${news.url}'">Fonte: ${news.source.name} </a>
       </div>
     </div>  
   `
@@ -98,12 +98,12 @@ function makeMediumNews(news){
 function makeSmallNews(news){
 
   let html_sm = `
-    <div class="card col-md-4 col-xs-12">
+    <div onclick="window.location.href=${news.url}" class="card col-md-4 col-xs-12">
       <div class="news-sm">
         <hr>
         <h5>${news.title}</h5>
         <hr>
-        <a href='${news.url}'fonte">Fonte: ${news.source.name} </a>
+        <a href='${news.url}'">Fonte: ${news.source.name} </a>
       </div>
     </div>  
   `
@@ -129,24 +129,31 @@ function requestContent(){
 
 function fillPageContent(contents){
 
-  console.log(contents);
   contents = JSON.parse(contents);
 
-  fillIntro(contents['introtitle'] + contents['intro']);
-  fillHist(contents['historiatitle'] + contents['historia'] + contents['historiasignature']);
+  fillIntro(contents['A1T'] + contents['A1C']);
+  fillHist(contents['A2T'] + contents['A2C'] + contents['A2S']);
+  fillPartners(contents['A3T'], contents['A3C']);
 }
 
 function fillIntro(contents){
-  let intro = document.getElementById("introTXT");
+  let intro = document.getElementById("A1C");
   intro.innerHTML = contents;
 }
 
 function fillHist(contents){
-  let historiaTXT = document.getElementById("historiaTXT");
+  let historiaTXT = document.getElementById("A2C");
 
   historiaTXT.innerHTML = contents;
 }
 
+function fillPartners(title, footer){
+  let areaTitle = document.getElementById("A3T");
+  let areaFooter = document.getElementById("A3C");
+  
+  areaTitle.innerHTML = title;
+  areaFooter.innerHTML = footer;
+}
 
 
 // --------------------------------------------------------------------------------//
