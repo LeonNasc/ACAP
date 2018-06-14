@@ -36,11 +36,6 @@
 </head>
 
 
-<?php if($_SESSION['authentication_status'] == True):?>
-
-<body class="container-fluid">
-
-
   <header id="header" class="sticky-top navbar navbar-expand-md ">
 
 
@@ -65,6 +60,9 @@
   </header>
 
 
+<?php if($_SESSION['authentication_status'] == True):?>
+
+<body class="container-fluid">
 
   <hr>
   <div class="row">
@@ -130,28 +128,6 @@
       </div>
     </div>
 <?php else:?>
-<header id="header" class="sticky-top navbar navbar-expand-md ">
-
-
-    <div class="collapse navbar-collapse row" id="navbarNav">
-      <a id="logo" class="navbar-brand col" href="#">
-        <img class="border rounded-left border-secondary" src="img/logo.png" alt="LOGO" />
-      </a>
-      <ul class="navbar-nav col">
-        <li class="nav-item">
-          <a class="nav-link text-muted" href="/ACAP/content.html#intro">Ir ao site</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-muted" href="/ACAP/controller.php?task=LOGF">Log off</a>
-        </li>
-      </ul>
-    </div>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="fas fa-angle-double-down"></i> ACAP
-    </button>
-  </header>
 
 <div class="container card">
 <h1>Login de Administrador</h1>
