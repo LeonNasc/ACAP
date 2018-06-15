@@ -64,7 +64,17 @@
 
 
 <?php else:?>
-
+<div class="container card">
+<h1>Login de Administrador</h1>
+<form action="controller.php" method="POST">
+  
+  <label for="token">Token de autenticação</label>
+  <input class="form-control" type="text" name="token" placeholder="token de autenticação"/>
+  <input type="hidden" name="task" value="AUTH"/>
+  
+  
+</form>
+</div>
 
 <?php endif;?>
  </div>
